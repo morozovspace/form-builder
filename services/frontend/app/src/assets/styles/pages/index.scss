@@ -1,0 +1,10 @@
+.index-page{
+    &__wrapper{
+        position: relative;
+        padding: 100px 30px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

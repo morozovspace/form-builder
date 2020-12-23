@@ -1,0 +1,21 @@
+.header{
+  &__wrapper{
+    display: flex;
+    padding: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Heebo', sans-serif;
+    font-size: 1.5em;
+    font-weight: 400;
+  }
+  &__link {
+    text-decoration: none;
+    display: inline-block;
+    color: $dark-blue;
+    /*
+    @include themify($themes) {
+      color: themed('textColor');  
+    }
+    */
+  }
+}
