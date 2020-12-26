@@ -13,6 +13,9 @@ services:
     ports: 
       # Nuxt default port
       - 3000:3000
+    environment:
+     - REPOSITORY_NAME=form-builder
     volumes:
+      - $PWD/docs:/home/node/app/dist
       - $PWD/services/frontend/app/src:/home/node/app/src
     entrypoint: ["npm","run","dev"]

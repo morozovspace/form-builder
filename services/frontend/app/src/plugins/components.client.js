@@ -1,7 +1,9 @@
 import Vue from 'vue'
 
-const components = {}
+import Vuelidate from 'vuelidate'
+Vue.use(Vuelidate)
 
+const components = {}
 Object.entries(components).forEach(([name, component]) => {
   Vue.component(name, component)
 })

@@ -1,16 +1,16 @@
 #!/bin/bash
 # Copyright (C) 2020 Nikita Morozov morozov.space@mail.ru - All Rights Reserved
-declare -a menu=("Development" "Build" "Quit")
+declare -a menu=("Development" "Generate" "Quit")
 cur=0
 start() {
   case ${menu[cur]} in
-    "Build" )
+    "Generate" )
       echo "Starting: ${menu[cur]}"
-      docker-compose -f ./docker/docker-compose.build.yml up --build
+      docker-compose -f ./docker/docker-compose.yml -f ./docker/docker-compose.generate.yml up --build
       ;;    
     "Development" )
       echo "Starting: ${menu[cur]}"
-      docker-compose -f ./docker/docker-compose.dev.yml up --build
+      docker-compose -f ./docker/docker-compose.yml up --build
       exit
       ;;
     "Quit" )

@@ -16,7 +16,8 @@
     "nuxt": "^2.14.12",    
     "@nuxtjs/axios": "5.12.2",
     "@nuxtjs/style-resources": "1.0.0",
-    "@nuxtjs/svg-sprite": "0.4.12"
+    "@nuxtjs/svg-sprite": "0.4.12",
+    "vuelidate": "0.7.6"
   },
   "devDependencies": {
     "node-sass": "4.14.1",

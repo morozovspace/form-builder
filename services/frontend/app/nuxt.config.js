@@ -1,5 +1,3 @@
-import head from "./config/head"
-
 export default {
   vue: {
     config: {
@@ -12,8 +10,8 @@ export default {
   ssr: false,
   srcDir: "src",
   components: true,
-  head: { 
-    title: process.env.PWA_OG_TITLE,
+  head: {
+    title: "Form-builder example",
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -27,12 +25,14 @@ export default {
       },
     ],
     link: [
-      { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
-      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
-      { rel: "icon", type: 'image/png', sizes: "16x16", href: "/favicon-16x16.png" },
-      { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#2b2b2b"},  
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Heebo:100,300,400,500,700,800,900" },
     ],
+  },
+  router: {
+    base: `/${process.env.REPOSITORY_NAME}`
+  },
+  axios: {
+    baseURL: `/${process.env.REPOSITORY_NAME}`
   },
   server: {
     port: 3000,
