@@ -1,14 +1,13 @@
 [
   {
-    "id": "firstName",
+    "id": "input",
     "type": "Input",
-    "name": "first name",
-    "label": "First Name",
+    "label": "Input",
     "validation": [
       "required",
       {
         "name": "minLength",
-        "args": [ 4 ]
+        "args": [ 10 ]
       }
     ],
     "params": {
@@ -17,10 +16,9 @@
     }
   },
   {
-    "id": "answer",
+    "id": "textarea",
     "type": "Textarea",
-    "name": "answer",
-    "label": "Answer",
+    "label": "Textarea",
     "validation": ["required"],
     "params": {
       "type": "text",
@@ -30,8 +28,7 @@
   {
     "id": "date-day",
     "type": "Input",
-    "name": "day",
-    "label": "Choose a day",
+    "label": "Date selector",
     "validation": ["required"],
     "params": {
       "type": "date"
@@ -40,18 +37,16 @@
   {
     "id": "date-time",
     "type": "Input",
-    "name": "time",
-    "label": "Choose a time",
+    "label": "Time selector",
     "validation": ["required"],
     "params": {
       "type": "time"
     }
   },
   {
-    "id": "typeOfSomething",
+    "id": "selector",
     "type": "Select",
-    "name": "Some option filed name",
-    "label": "Select option",
+    "label": "Selector",
     "params": {
       "options": [
         {
