@@ -1,7 +1,8 @@
 <template>
-  <label>
+  <label class="form-control__wrapper">
     {{ field.label }}
     <input
+      class="form-control__input"
       :type="field.params.type || 'text'"
       :inputmode="field.params.inputmode || 'text'"
       @input="$emit('input', $event.target.value)"
@@ -17,7 +18,6 @@ export default {
         return {
           id: "defaultInput",
           type: "Input",
-          name: "defaultName",
           label: "defaultLabel",
           validation: "",
           params: {

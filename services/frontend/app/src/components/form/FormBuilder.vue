@@ -1,25 +1,3 @@
-<template>
-  <form @submit.prevent="submit">
-    <div v-for="field in config" :key="field.id">
-      <component
-        :is="field.type"
-        :name="field.id"
-        :field="field"
-        @input="updateField(field.id, $event)"
-      />
-      <div v-if="$v.formValues[field.id] && $v.formValues[field.id].$error">
-        <!--
-          Your custom error messages
-          <span v-if="!$v.formValues[field.id].required">Field is required.</span>
-        -->
-        Field is invalid.
-      </div>
-    </div>
-    <div>
-      <button type="submit" :disabled="disabled">Submit</button>
-    </div>
-  </form>
-</template>
 <script>
 import { validationMixin } from "vuelidate" // https://vuelidate.js.org
 import * as VuelidateValidators from "vuelidate/lib/validators" // https://vuelidate.js.org/#sub-builtin-validators
@@ -119,3 +97,36 @@ export default {
   },
 }
 </script>
+<template>
+  <form @submit.prevent="submit">
+    <div
+      v-for="(field, i) in config"
+      :key="field.id"
+      :class="['form-group', i < config.length - 1 ? 'mb-30' : '']"
+    >
+      <component
+        :is="field.type"
+        :field="field"
+        @input="updateField(field.id, $event)"
+      />
+      <span
+        v-if="$v.formValues[field.id] && $v.formValues[field.id].$error"
+        class="form-group__error"
+      >
+        <!--
+          Your custom error messages
+          <span v-if="!$v.formValues[field.id].required">Field is required.</span>
+        -->
+        Field is invalid.
+      </span>
+    </div>
+    <div class="form-submit__wrapper">
+      <button class="form-submit__submit" type="submit" :disabled="disabled">
+        Submit
+      </button>
+    </div>
+  </form>
+</template>
+<style lang="scss">
+@import "@/assets/styles/components/Form.scss";
+</style>
