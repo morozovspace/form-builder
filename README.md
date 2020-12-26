@@ -1,6 +1,7 @@
 ## Тетсовый конструктор формы
 Конструктор форм основанный на конфигурации. Тестовая конфигурация расположена в файле form-example-config.json.
 Для валидации используется библиотека https://vuelidate.js.org/, также присутствует возможность расширения валидации своими функциями.
+[Демо](https://morozovspace.github.io/form-builder/)
 ### Requirements:
  - docker
  - docker-compose
