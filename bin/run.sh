@@ -6,7 +6,7 @@ start() {
   case ${menu[cur]} in
     "Generate" )
       echo "Starting: ${menu[cur]}"
-      docker-compose -f ./docker/docker-compose.yml -f ./docker/docker-compose.generate.yml up --build
+      docker-compose -f ./docker/docker-compose.yml -f ./docker/docker-compose.generate.yml up --build && docker-compose -f ./docker/docker-compose.yml down
       ;;    
     "Development" )
       echo "Starting: ${menu[cur]}"
